@@ -1,5 +1,6 @@
 let canvas=document.getElementById("areaJuego");
 let ctx=canvas.getContext("2d");
+let puntaje=0;
 
 const ALTO_GATO=50;
 const ANCHO_GATO=40;
@@ -71,6 +72,8 @@ function detectarColision()
         gatoY < comidaY + ALTO_COMIDA) 
         {
         reaparecer();
+        puntaje=puntaje+1;
+        mostrarEnSpan("puntos",puntaje);
         } 
         else {
         

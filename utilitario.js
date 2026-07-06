@@ -11,3 +11,9 @@ function graficarRectangulo(x,y,ancho,alto,color)
     ctx.fillStyle=""+color;
     ctx.fillRect(x,y,ancho,alto);
 }
+
+function mostrarEnSpan(idSpan,valor) 
+{
+    let cmpSpan=document.getElementById(idSpan);
+    cmpSpan.textContent=valor;
+}
