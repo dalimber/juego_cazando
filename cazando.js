@@ -16,8 +16,10 @@ function iniciarJuego()
 {
     gatoX= (canvas.width-ANCHO_GATO)/2;
     gatoY= (canvas.height-ALTO_GATO)/2;
-    comidaX=canvas.width-ANCHO_COMIDA;
-    comidaY=canvas.height-ALTO_COMIDA;
+    //comidaX=canvas.width-ANCHO_COMIDA;
+    //comidaY=canvas.height-ALTO_COMIDA;
+    comidaX=(canvas.width)/2;
+    comidaY=0;
     actualizarCanva();
 }
 
@@ -45,6 +47,7 @@ function actualizarCanva()
     limpiarCanva();
     graficarGato();
     graficarComida();
+    detectarColision();
 }
 //MOVIMIENTO
 function moverIzquierda() 
@@ -66,4 +69,18 @@ function moverAbajo()
 {
     gatoY=gatoY+10;
     actualizarCanva();
+}
+//COMER
+function detectarColision() 
+{
+    if (gatoX + ANCHO_GATO > comidaX && 
+        gatoX < comidaX + ANCHO_COMIDA &&
+        gatoY + ALTO_GATO > comidaY && 
+        gatoY < comidaY + ALTO_COMIDA) 
+        {
+        alert("PUNTO");
+        } 
+        else {
+        
+    }    
 }
