@@ -77,6 +77,12 @@ function detectarColision()
         reaparecer();
         puntaje=puntaje+1;
         mostrarEnSpan("puntos",puntaje);
+        if (puntaje==6) 
+            {
+            alert("HAS GANADO");
+            clearInterval(intervalo);
+
+            }
         } 
         else {
         
@@ -94,5 +100,11 @@ function restarTiempo()
 {
     tiempo=tiempo-1;
     mostrarEnSpan("tiempo",tiempo);
+    if (tiempo==0) 
+    {
+        alert("GAME OVER");
+        clearInterval(intervalo);
+        
+    }
     
 }
