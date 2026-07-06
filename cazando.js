@@ -16,10 +16,8 @@ function iniciarJuego()
 {
     gatoX= (canvas.width-ANCHO_GATO)/2;
     gatoY= (canvas.height-ALTO_GATO)/2;
-    //comidaX=canvas.width-ANCHO_COMIDA;
-    //comidaY=canvas.height-ALTO_COMIDA;
-    comidaX=(canvas.width)/2;
-    comidaY=0;
+    comidaX=canvas.width-ANCHO_COMIDA;
+    comidaY=canvas.height-ALTO_COMIDA;
     actualizarCanva();
 }
 
@@ -30,12 +28,6 @@ function graficarGato()
 function graficarComida() 
 {
     graficarRectangulo(comidaX,comidaY,ANCHO_COMIDA,ALTO_COMIDA,"green");    
-}
-
-function graficarRectangulo(x,y,ancho,alto,color) 
-{
-    ctx.fillStyle=""+color;
-    ctx.fillRect(x,y,ancho,alto);
 }
 
 function limpiarCanva() 
@@ -78,9 +70,16 @@ function detectarColision()
         gatoY + ALTO_GATO > comidaY && 
         gatoY < comidaY + ALTO_COMIDA) 
         {
-        alert("PUNTO");
+        reaparecer();
         } 
         else {
         
     }    
+}
+//REAPARECER
+function reaparecer() 
+{
+    comidaX=generarAleatorio(0,canvas.width-ANCHO_COMIDA);
+    comidaY=generarAleatorio(0,canvas.height-ALTO_COMIDA);
+    actualizarCanva();
 }
