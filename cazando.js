@@ -103,8 +103,18 @@ function restarTiempo()
     if (tiempo==0) 
     {
         alert("GAME OVER");
-        clearInterval(intervalo);
-        
+        clearInterval(intervalo); 
     }
+    
+}
+//REINICIAR
+function reiniciar() 
+{
+    puntaje=0;
+    tiempo=10;
+    mostrarEnSpan("tiempo",tiempo);
+    mostrarEnSpan("puntos",puntaje);
+    
+    iniciarJuego();
     
 }
