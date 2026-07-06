@@ -1,6 +1,8 @@
 let canvas=document.getElementById("areaJuego");
 let ctx=canvas.getContext("2d");
 let puntaje=0;
+let tiempo=10;
+let intervalo;
 
 const ALTO_GATO=50;
 const ANCHO_GATO=40;
@@ -20,6 +22,7 @@ function iniciarJuego()
     comidaX=canvas.width-ANCHO_COMIDA;
     comidaY=canvas.height-ALTO_COMIDA;
     actualizarCanva();
+    intervalo=setInterval(restarTiempo,1000);
 }
 
 function graficarGato() 
@@ -85,4 +88,11 @@ function reaparecer()
     comidaX=generarAleatorio(0,canvas.width-ANCHO_COMIDA);
     comidaY=generarAleatorio(0,canvas.height-ALTO_COMIDA);
     actualizarCanva();
+}
+//CUENTA REGRESIVA
+function restarTiempo() 
+{
+    tiempo=tiempo-1;
+    mostrarEnSpan("tiempo",tiempo);
+    
 }
