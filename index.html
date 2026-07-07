@@ -1,40 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
   <title>Juego Cazando</title>
   <link rel="stylesheet" href="cazando.css">
   <script src="utilitario.js"></script>
 </head>
 <body onload="iniciarJuego()">
 
-  <h1>Juego Cazando</h1>
-  <p>Autor: Javier Andrade</p>
+  <header>
+    <h1>Juego Cazando</h1>
+  </header>
 
-  <div>
-    <canvas id="areaJuego" width="500" height="500"></canvas>
-  </div>
+  <main class="juego-contenedor">
+    <div class="area-grafica">
+      <canvas id="areaJuego" width="500" height="500"></canvas>
+    </div>
 
+    <div class="controles-direccion">
+      <button onclick="moverArriba()">⬆</button>
+      <div class="fila-horizontal">
+        <button onclick="moverIzquierda()">⬅</button>
+        <button onclick="moverAbajo()">⬇</button>
+        <button onclick="moverDerecha()">➡</button>
+      </div>
+    </div>
+  </main>
 
-  <div class="controles">
-    <button onclick="moverArriba()">⬆</button>
-    <br>
-    <button onclick="moverIzquierda()">⬅</button>
-    <button onclick="moverAbajo()">⬇</button>
-    <button onclick="moverDerecha()">➡</button>
-  </div>
+  <section class="estado-juego">
+    <div class="panel">
+      <span>Puntos: <span id="puntos">0</span></span>
+      <span>Tiempo: <span id="tiempo">10</span></span>
+    </div>
+    
+    <div class="controles-accion">
+      <button onclick="reiniciar()" id="btn-reiniciar">Reiniciar</button>
+    </div>
+    
+    <p id="mensaje"></p>
+  </section>
 
-  <div class="controles">
-    <button onclick="reiniciar()">Reiniciar</button>
-  </div>
-
-
-  <div class="panel">
-    <span>Puntos: <span id="puntos">0</span></span>
-    <span>Tiempo: <span id="tiempo">10</span></span>
-  </div>
-
-  <p id="mensaje"></p>
-
+  <footer>
+    <p>Autor: Javier Andrade</p>
+  </footer>
 
 </body>
 <script src="cazando.js"></script>
