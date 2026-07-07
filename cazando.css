@@ -32,7 +32,7 @@ h1 {
 
 /* Canvas con Marco de Neón Cian */
 canvas {
-  background: #05050a;
+  background: #fff;
   border: 4px solid #00f0ff;
   box-shadow: 0 0 10px #00f0ff, inset 0 0 15px #00f0ff;
   border-radius: 8px;
