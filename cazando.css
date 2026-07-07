@@ -1,33 +1,21 @@
-/* Configuración General - Fondo Oscuro Cyberpunk */
+/* Configuración General - Carga y acople de background.png */
 body {
   text-align: center;
   font-family: 'Courier New', Courier, monospace, sans-serif;
-  background-color: #0b0b16;
+  
+  /* Carga de tu imagen de fondo personalizada */
+  background-image: url('background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #0d0d1a; /* Color de respaldo oscuro por si tarda en cargar la imagen */
+  
   color: #fff;
   margin: 0;
   padding: 20px;
   min-height: 100vh;
   box-sizing: border-box;
-  position: relative;
-  overflow-x: hidden;
-}
-
-/* Gráfico de Fondo Acoplado y Posicionado */
-.retro-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Se mantiene detrás de todo el HTML */
-  background-image: 
-    linear-gradient(transparent 50%, rgba(255, 0, 127, 0.15) 50%),
-    linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px);
-  background-size: 100% 100%, 40px 40px, 40px 40px;
-  /* Efecto de perspectiva para simular profundidad */
-  perspective: 500px;
-  transform: scale(1.1);
 }
 
 /* Título Retro Neón */
@@ -40,7 +28,7 @@ h1 {
   letter-spacing: 2px;
 }
 
-/* Contenedor Principal (Flexbox para alinear Canvas e inputs lado a lado) */
+/* Distribución lado a lado de los elementos principales */
 .juego-contenedor {
   display: flex;
   justify-content: center;
@@ -48,18 +36,17 @@ h1 {
   gap: 40px;
   max-width: 900px;
   margin: 0 auto 20px auto;
-  position: relative;
 }
 
-/* Canvas con Marco de Neón Cian (Contrasta perfectamente sobre el fondo oscuro) */
+/* Área del Canvas (Se le añade un fondo semitransparente oscuro y borde brillante) */
 canvas {
-  background: #05050a;
+  background: rgba(55, 55, 141, 0.85);
   border: 4px solid #00f0ff;
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), inset 0 0 15px #00f0ff;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.4), inset 0 0 15px #00f0ff;
   border-radius: 8px;
 }
 
-/* Distribución de Botones de Dirección (Estilo Arcade) */
+/* Distribución de la cruceta de controles */
 .controles-direccion {
   display: flex;
   flex-direction: column;
@@ -72,9 +59,9 @@ canvas {
   gap: 10px;
 }
 
-/* Estilo Base de los Botones Neón */
+/* Botones con estilo Arcade Neón */
 button {
-  background: rgba(11, 11, 22, 0.9); /* Fondo semi-opaco para no perderse con la rejilla */
+  background: rgba(13, 13, 26, 0.9);
   color: #00f0ff;
   border: 2px solid #00f0ff;
   padding: 12px 20px;
@@ -93,7 +80,7 @@ button:hover {
   box-shadow: 0 0 15px #00f0ff, 0 0 25px #00f0ff;
 }
 
-/* Botón Reiniciar con Variante Magenta */
+/* Botón Reiniciar con color Magenta */
 #btn-reiniciar {
   color: #ff007f;
   border-color: #ff007f;
@@ -107,12 +94,7 @@ button:hover {
   box-shadow: 0 0 15px #ff007f, 0 0 25px #ff007f;
 }
 
-/* Bloque Inferior: Panel de Estado */
-.estado-juego {
-  margin-top: 20px;
-  position: relative;
-}
-
+/* Panel de Puntos y Tiempo inferior */
 .panel {
   font-size: 24px;
   font-weight: bold;
@@ -124,7 +106,7 @@ button:hover {
   text-shadow: 0 0 8px #ffff00;
 }
 
-/* Mensaje de Alerta/Fin de juego */
+/* Espacio reservado para los textos de fin de juego */
 #mensaje {
   font-size: 22px;
   font-weight: bold;
@@ -134,26 +116,31 @@ button:hover {
   height: 25px;
 }
 
-/* Pie de página con diseño de Avatar */
+/* Pie de página y estructura del Avatar */
 footer {
   margin-top: 40px;
-  border-top: 1px dashed #333355;
+  border-top: 1px dashed rgba(255, 255, 255, 0.2);
   padding-top: 15px;
-  position: relative;
 }
 
 .autor-contenedor {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
-  font-size: 14px;
-  color: #8888aa;
+  gap: 12px; /* Espacio exacto entre el avatar y el texto */
 }
 
+.autor-contenedor p {
+  margin: 0;
+  font-size: 16px;
+  color: #e0e0ff;
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+}
+
+/* Diseño del Avatar circular al lado del Autor */
 .autor-avatar {
-  width: 45px;
-  height: 45px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #ff007f;
