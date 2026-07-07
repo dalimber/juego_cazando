@@ -1,2 +1,7 @@
 Prompt 2:
 crea y agrega una imagen background que contraste bien con la distribucion actual ademas agregar un avatar al lado del autor
+Prompt 3:
+Quiero que generes una imagen  background que encuadre con la maquetacion de esta pagina web de tal forma que sobresalga del background los textos el
+ canva y botones existentes, utiliza y analiza las medidas de cada elemento que contiene la pagina web para que el background tenga un buen encaje con los elementos de la pagina web. Quierp que se vea como si un vinil recubriera el espacio vacio que se forma entre los botones, canvas y textos.
+Prompt 4:
+Quiero agregar esta imagen de background y no la rejilla tridimencionale que generaste brindándome el codigo tanto html como css
